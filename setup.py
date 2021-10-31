@@ -21,8 +21,8 @@ ext_modules = [
         "rostest_py_coverage_bug.python_example",
         ["src/main.cpp"],
         # Example: passing in the version to the compiled code
-        define_macros=[('VERSION_INFO', d["version"])],
-        ),
+        define_macros=[("VERSION_INFO", d["version"])],
+    ),
 ]
 d["ext_modules"] = ext_modules
 d["cmdclass"] = {"build_ext": build_ext}
