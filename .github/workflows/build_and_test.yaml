@@ -32,7 +32,7 @@ jobs:
       CACHE_PREFIX: ${{ matrix.env.ROS_DISTRO }}-${{ matrix.env.ROS_REPO }}${{ matrix.env.CCOV && '-ccov' || '' }}
       CLANG_TIDY_BASE_REF: ${{ github.base_ref || github.ref }}
       UPSTREAM_WORKSPACE: rostest.rosinstall
-      ADDITIONAL_DEBS: python3-pybind11
+      BEFORE_INIT: pip3 install pybind11
 
     name: "${{ matrix.env.ROS_DISTRO }}-${{ matrix.env.ROS_REPO }}${{ matrix.env.CCOV && ' + ccov' || ''}}${{ matrix.env.CLANG_TIDY && ' + clang-tidy' || '' }}"
     runs-on: ubuntu-latest
