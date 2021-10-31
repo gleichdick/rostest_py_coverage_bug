@@ -55,6 +55,8 @@ jobs:
           restore-keys: |
             ccache-${{ env.CACHE_PREFIX }}-${{ github.sha }}
             ccache-${{ env.CACHE_PREFIX }}
+      - name: pip
+        run: pip3 install pybind11
       - name: industrial_ci
         uses: 'ros-industrial/industrial_ci@master'
         env: ${{ matrix.env }}
